@@ -132,6 +132,9 @@ const (
 	Trusty  = "trusty"
 	Windows = "windows"
 
+	Wasi   = "wasi"
+	Wasm32 = "wasm32"
+
 	AMD64               = "amd64"
 	ARM64               = "arm64"
 	ARM                 = "arm"
@@ -444,6 +447,13 @@ var List = map[string]map[string]*Target{
 			CCompiler:        sourceDirVar + "/prebuilt/third_party/clang/linux-x64/bin/clang",
 			Objdump:          sourceDirVar + "/prebuilt/third_party/clang/linux-x64/bin/llvm-objdump",
 			CFlags:           fuchsiaCFlags(ARM64, "aarch64"),
+		},
+	},
+	Wasi: {
+		Wasm32: {
+			PtrSize:      4,
+			PageSize:     4 << 14,
+			LittleEndian: true,
 		},
 	},
 	Windows: {

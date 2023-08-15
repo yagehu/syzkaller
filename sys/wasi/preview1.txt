@@ -1,0 +1,8 @@
+resource fd[int32]: -1
+
+path_open(fd fd, dirflags flags[lookupflags], path ptr[in, filename], oflags flags[oflags], fs_rights_base flags[rights], fs_rights_inheriting flags[rights], fdflags flags[fdflags], fd_out ptr[out, fd])
+
+fdflags = append, dsync, nonblock, rsync, sync
+lookupflags = symlink_follow
+oflags = creat, directory, excl, trunc
+rights = fd_datasync, fd_read, fd_seek, fd_fdstat_set_flags, fd_sync, fd_tell, fd_write, fd_advise, fd_allocate, path_create_directory, path_create_file, path_link_source, path_link_target, path_open
